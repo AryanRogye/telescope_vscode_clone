@@ -5,10 +5,6 @@ async function getFiles() {
   return await vscode.workspace.findFiles("**/*");
 }
 
-async function getFileContent(file) {
-  let uri = vscode.Uri.file(file);
-  return await vscode.workspace.fs.readFile(uri);
-}
 
 async function grepFiles() {
   const files = await getFiles(); // get all files in the workspace
