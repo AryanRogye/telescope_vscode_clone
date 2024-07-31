@@ -2,7 +2,7 @@
   "name": "comfy-live-grep",
   "displayName": "live-grep",
   "description": "telescope live grep clone for strings",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "comfyduck667",
   "repository": {
     "type": "git",
