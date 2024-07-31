@@ -3,6 +3,11 @@
   "displayName": "live-grep",
   "description": "telescope live grep clone for strings",
   "version": "0.0.1",
+  "publisher": "comfy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AryanRogye/telescope_vscode_clone"
+  },
   "engines": {
     "vscode": "^1.91.0"
   },

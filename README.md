@@ -6,6 +6,8 @@ This is somewhat a replica of the telescope plugin for neovim
 
 for right now the only feature is the fuzzy finder u can run it by doing cmd+shift+p and type grep-files
 
+![Fuzzy Finder for Vim](assets/fuzzy_finder_for_vim.gif)
+
 <!-- \!\[feature X\]\(images/feature-x.png\) -->
 
 <!-- > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
