@@ -21,6 +21,9 @@
     "commands": [{
       "command": "comfy-live-grep.grep-files",
       "title": "grep-files"
+    },{
+      "command": "comfy-live-grep.grep-search",
+      "title": "grep-search"
     }]
   },
   "scripts": {

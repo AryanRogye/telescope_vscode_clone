@@ -9,8 +9,13 @@ function activate(context) {
       await grepFiles();
     }
   );
-  context.subscriptions.push(disposable1);
-  // context.subscriptions.push(disposable1, disposable2);
+  const disposable2 = vscode.commands.registerCommand(
+    "comfy-live-grep.grep-search",
+    async function () {
+      await GrepSearch();
+    }
+  );
+  context.subscriptions.push(disposable1, disposable2);
 }
 
 function deactivate() {}
