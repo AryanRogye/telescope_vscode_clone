@@ -3,7 +3,7 @@
   "displayName": "live-grep",
   "description": "telescope live grep clone for strings",
   "version": "0.0.1",
-  "publisher": "comfy",
+  "publisher": "comfyduck667",
   "repository": {
     "type": "git",
     "url": "https://github.com/AryanRogye/telescope_vscode_clone"
@@ -15,6 +15,7 @@
     "Other"
   ],
   "activationEvents": [
+    "onCommand:comfy-live-grep.grep-files"
   ],
   "main": "./extension.js",
   "contributes": {
