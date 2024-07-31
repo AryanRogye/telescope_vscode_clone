@@ -11,28 +11,24 @@ async function getFileContent(file) {
 }
 
 async function grepFiles() {
-  const files = await getFiles();
-  const map = new Map();
-  for (let i in files) {
-    let file = files[i].fsPath;
-    if (file.endsWith(".o") || file.endsWith(".a")) {
-      continue;
+  const files = await getFiles(); // get all files in the workspace
+  const fileArray = [];
+  try {
+    for (let i in files) {
+      let file = files[i].fsPath;
+      //if file ends with .o or .a, skip it cuz it's a binary file
+      if (file.endsWith(".o") || file.endsWith(".a")) {
+        continue;
+      }
+      fileArray.push(file); // add file to fileArray
     }
-    const fileContent = await getFileContent(file);
-    const content = Buffer.from(fileContent)
-      .toString("utf8")
-      .substring(0, fileContent.length);
-    map[file] = content;
+    // show quick pick of the file array
+    showQuickPick(fileArray);
+  } catch (err) {
+    vscode.window.showErrorMessage(err.message);
   }
-  console.log("done looking at files");
-  for (const [key, value] of Object.entries(map)) {
-    console.log(key);
-    console.log(`value of ${key} is ${value}`);
-  }
-  vscode.window.showInformationMessage("Hello World from comfy-live-grep");
-  showQuickPick(map);
 }
 
 module.exports = {
-    grepFiles,
-}
+  grepFiles,
+};
