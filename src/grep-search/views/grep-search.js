@@ -1,3 +1,5 @@
+const { getWebviewContent } = require("../models/webview_model");
+
 const vscode = require("vscode");
 
 async function getFiles() {
@@ -30,6 +32,16 @@ async function GrepSearch() {
     for (let [key, value] of map) {
       console.log(key, value);
     }
+    const panel = vscode.window.createWebviewPanel(
+      'comfy', // Identifies the type of the webview. Used internally
+      'Grep-Search', // Title of the panel displayed to the user
+      vscode.ViewColumn.One, // Editor column to show the new webview panel in.
+      {
+        enableScripts: true,
+        retainContextWhenHidden: true // Retain the webview context when hidden
+      } // Webview options. More on these later.
+    );
+    panel.webview.html = getWebviewContent(map);
   } catch (err) {
     vscode.window.showErrorMessage(err.message);
   }
