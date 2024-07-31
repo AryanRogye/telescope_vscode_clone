@@ -7,15 +7,22 @@ This is somewhat a replica of the telescope plugin for neovim
 for right now the only feature is the fuzzy finder u can run it by doing cmd+shift+p and type grep-files
 
 For users who use the vim-mode on VSCode and want to get the same feel as the telescope on Neovim:
-1. cmd+shift+p, search `Preferences: Open User Settings (JSON)`, and add the line `"vim.leader": "<space>",`
+1. cmd+shift+p, search `Preferences: Open User Settings (JSON)`, and add the line:
+    ```json
+    {
+        "vim.leader": "<space>"
+    }
+    ```
 2. cmd+shift+p, search `Preferences: Open Application Settings (JSON)`, and add the lines:
     ```json
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": ["<leader>", "f", "f"],
-            "commands": ["comfy-live-grep.grep-files"]
-        }
-    ]
+    {
+        "vim.normalModeKeyBindingsNonRecursive": [
+            {
+                "before": ["<leader>", "f", "f"],
+                "commands": ["comfy-live-grep.grep-files"]
+            }
+        ]
+    }
     ``` 
 
 ![Fuzzy Finder for Vim](assets/fuzzy_finder_for_vim.gif)
