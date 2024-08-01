@@ -20,7 +20,8 @@ async function grepFiles() {
       if (file.endsWith(".o") || file.endsWith(".a")) {
         continue;
       }
-      fileArray.push(file); // add file to fileArray
+      const relativePath = vscode.workspace.asRelativePath(file);
+      fileArray.push(relativePath); // add file to fileArray
     }
     // show quick pick of the file array
     showQuickPick(fileArray);
